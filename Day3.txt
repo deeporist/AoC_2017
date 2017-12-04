@@ -1,0 +1,45 @@
+17  16  15  14  13
+18   5   4   3  12
+19   6   1   2  11  
+20   7   8   9  10
+  
+
+
+
+
+
+
+289176
+
+289326
+
+
+
+289445 538 539 l
+
+
+
+
+
+1 1-1
+12 1-2
+123 2-2
+1234 
+
+direction
+log(row,col)
+increment
+
+init:right(1,1)
+
+up-left(col+1)
+down-right(col+1)
+right-up(row+1)
+left-down(row+1)
+
+(1,1,1)r(2,1,2)u(3,2,2)L(3+2=5,2,3)d(5+2=7,3,3)r(7+3=10,3,4)
+
+up:1
+down:2
+right:3
+left:4
