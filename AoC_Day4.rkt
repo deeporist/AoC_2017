@@ -11,7 +11,7 @@
   (lambda (s lat)
     (cond
       ((null? lat) #t)
-      ((not (string-contains? (car lat) s)) (repa s (cdr lat)))
+      ((not (string=? (car lat) s)) (repa s (cdr lat)))
       (else #f)
       )))
 ;;;;;;;;;;;;;;;;;;;;;;;
