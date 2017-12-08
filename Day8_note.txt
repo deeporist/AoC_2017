@@ -1,0 +1,39 @@
+1
+取出所有变量到Day8_register.txt
+格式:  name variable
+需取消重复 find /c ""
+
+
+2
+一行一行解析Day8.txt
+js inc 257 if wn < 9
+1  2   3   4  5  6 7
+a  b   c   d  e  f g
+
+Day8_ex.txt
+js +257 if wn lss 9
+1  2    3  4  5   6
+a  b    c  d  e   f
+=>
+if wn lss 9 (set /a js=%js%+257)
+echo 
+
+先通过Day8_register.txt 把变量全部转存进系统变量
+
+只能直接把Day8_register.txt做成Day8_set.bat 然后再调用了
+
+判断567 Day8.txt的6需替换Day8_ex.txt
+
+findstr "%%a" Day8_register.txt
+
+不行  看来只能把Day8.txt "做成" 一个bat了
+set /a %%a
+(inc -)
+(dec -)
+
+Day8_com.bat
+setlocal ENABLEDELAYEDEXPANSION
+set maxn
+set max=0
+
+if /i %js% gtr !max! (set maxn=js & set max=%js%)
