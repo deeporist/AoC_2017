@@ -1,0 +1,27 @@
+0 <-> 2
+1 <-> 1
+2 <-> 0, 3, 4
+3 <-> 2, 4
+4 <-> 2, 3, 6
+5 <-> 6
+6 <-> 4, 5
+
+Program 0 by definition.
+Program 2, directly connected to program 0.
+Program 3 via program 2.
+Program 4 via program 2.
+Program 5 via programs 6, then 4, then 2.
+Program 6 via programs 4, then 2.
+
+构建一个数组(可能需要是一个超大的二位数组)来保存记录
+rec[2000][8]
+另一个数组用于记录和0能连上的成员
+rec0[2000]
+
+其次我要搞个递归函数 给它一个地址 比如rec[0]
+它会把rec[0]的成员23 标志在a[23]=1, 78标志在a[78]=1
+然后分别对rec[23]和rec[78]做同样的事
+
+int 
+while(rec[n]!=0)
+{a[n]=1;}
