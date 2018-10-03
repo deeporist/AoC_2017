@@ -18,12 +18,20 @@ int main(void)
   while((c=fgetc(fp))!=EOF)
     {
       if(c==0xd)
-	{c=fgetc(fp);rec[n++][t]=9999;t=0;continue;}
+	{
+	  c=fgetc(fp);
+	  rec[n++][t]=9999;
+	  t=0;
+	  continue;
+	}
       if(c==0x20)
-	{t++;continue;}
+	{
+	  t++;
+	  continue;
+	}
       rec[n][t]=rec[n][t]*10+(c^(0x30));
     }
-  
+    fclose(fp);
   /*--------------------*/
   n=0;
   t=1;
@@ -38,7 +46,7 @@ int main(void)
       printf("%u %u\n",n++,t);
     }
   /*--------------------*/
-  fclose(fp);
+
   
   return 0;
 }

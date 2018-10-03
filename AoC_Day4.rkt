@@ -1,4 +1,5 @@
 #lang racket
+;;;;;;;;;;;;;;;;;;;
 (define check
   (lambda (lat)
     (cond
